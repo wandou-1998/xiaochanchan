@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        perspective: 1000px;
+      }
+      .box {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        animation: bar 15s linear infinite;
+        transform-style: preserve-3d;
+      }
+      @keyframes bar {
+        0% {
+        }
+        100% {
+          transform: rotate3d(2, 2, 2, 740deg);
+        }
+      }
+      .box div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+      }
+      .box div:nth-child(1) {
+        background: url(imng/1.jpg) no-repeat;
+        background-size: 300px 300px;
+        transform: translateZ(150px);
+      }
+      .box div:nth-child(2) {
+        background: url(imng/2.jpg) no-repeat;
+        background-size: 300px 300px;
+        transform: translateZ(-150px);
+      }
+      .box div:nth-child(3) {
+        background: url(imng/3.jpg) no-repeat;
+        background-size: 300px 300px;
+        transform: rotateX(90deg) translateZ(150px);
+      }
+      .box div:nth-child(4) {
+        background: url(imng/4.jpg) no-repeat;
+        background-size: 300px 300px;
+        transform: rotateX(90deg) translateZ(-150px);
+      }
+      .box div:nth-child(5) {
+        background: url(imng/1.jpg) no-repeat;
+        background-size: 300px 300px;
+        transform: rotateY(90deg) translateZ(150px);
+      }
+      .box div:nth-child(6) {
+        background: url(imng/6.jpg) no-repeat;
+        background-size: 300px 300px;
+        transform: rotateY(-90deg) translateZ(150px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
