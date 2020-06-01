@@ -13,64 +13,125 @@
         width: 300px;
         height: 300px;
         margin: 100px auto;
-        animation: bar 15s linear infinite;
+        /* animation: bar 15s linear infinite; */
         transform-style: preserve-3d;
+        transition: all 2s;
       }
-      @keyframes bar {
+      /* @keyframes bar {
         0% {
         }
         100% {
           transform: rotate3d(2, 2, 2, 740deg);
         }
-      }
-      .box div {
+      } */
+      .box .box1 {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.6;
+        opacity: 0.8;
       }
-      .box div:nth-child(1) {
+      .box .zheng {
         background: url(imng/1.jpg) no-repeat;
         background-size: 300px 300px;
         transform: translateZ(150px);
       }
-      .box div:nth-child(2) {
+      .box .hou {
         background: url(imng/2.jpg) no-repeat;
         background-size: 300px 300px;
         transform: translateZ(-150px);
       }
-      .box div:nth-child(3) {
+      .box .top {
         background: url(imng/3.jpg) no-repeat;
         background-size: 300px 300px;
         transform: rotateX(90deg) translateZ(150px);
       }
-      .box div:nth-child(4) {
+      .box .bottom {
         background: url(imng/4.jpg) no-repeat;
         background-size: 300px 300px;
         transform: rotateX(90deg) translateZ(-150px);
       }
-      .box div:nth-child(5) {
+      .box .left {
         background: url(imng/1.jpg) no-repeat;
         background-size: 300px 300px;
         transform: rotateY(90deg) translateZ(150px);
       }
-      .box div:nth-child(6) {
+      .box .right {
         background: url(imng/6.jpg) no-repeat;
         background-size: 300px 300px;
         transform: rotateY(-90deg) translateZ(150px);
       }
+      .banding {
+        width: 900px;
+        height: 300px;
+        text-align: center;
+        margin: 30px auto;
+      }
+      .bth {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        border: 1px solid #9999;
+        box-shadow: 0 0 20px #999;
+        border-radius: 50px;
+        line-height: 50px;
+        font-size: 30px;
+      }
+      #zheng:checked ~ .box {
+        transform: rotate3d(0, 0, 0, 0deg);
+      }
+      #hou:checked ~ .box {
+        transform: rotate3d(0, 1, 0, 180deg);
+      }
+      #top:checked ~ .box {
+        transform: rotate3d(1, 0, 0, -90deg);
+      }
+      #bottom:checked ~ .box {
+        transform: rotate3d(1, 0, 0, 90deg);
+      }
+      #left:checked ~ .box {
+        transform: rotate3d(0, 1, 0, 90deg);
+      }
+      #right:checked ~ .box {
+        transform: rotate3d(0, 1, 0, -90deg);
+      }
+      #sx:checked ~ .box {
+        transform: scale(0.5);
+      }
+      #fd:checked ~ .box {
+        transform: scale(1.8);
+      }
     </style>
   </head>
   <body>
+    <input type="radio" id="zheng" name="dd" hidden="hidden" />
+    <input type="radio" id="hou" name="dd" hidden="hidden" />
+    <input type="radio" id="top" name="dd" hidden="hidden" />
+    <input type="radio" id="bottom" name="dd" hidden="hidden" />
+    <input type="radio" id="left" name="dd" hidden="hidden" />
+    <input type="radio" id="right" name="dd" hidden="hidden" />
+    <input type="radio" id="sx" name="dd" hidden="hidden" />
+    <input type="radio" id="fd" name="dd" hidden="hidden" />
+
     <div class="box">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="box1 zheng"></div>
+      <div class="box1 hou"></div>
+      <div class="box1 top"></div>
+      <div class="box1 bottom"></div>
+      <div class="box1 left"></div>
+      <div class="box1 right"></div>
+    </div>
+
+    <div class="banding">
+      <label for="zheng" class="bth">正面</label>
+      <label for="hou" class="bth">后面</label>
+      <label for="top" class="bth">上面</label>
+      <label for="bottom" class="bth">下面</label>
+      <label for="left" class="bth">左面</label>
+      <label for="right" class="bth">右面</label>
+      <label for="sx" class="bth">缩小</label>
+      <label for="fd" class="bth">放大</label>
     </div>
   </body>
 </html>
